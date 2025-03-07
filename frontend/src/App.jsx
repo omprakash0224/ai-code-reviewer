@@ -8,16 +8,18 @@ import axios from 'axios';
 
 function App() {
   const [code, setCode] = useState(``)
-
-    const [review, setReview] = useState(``)
+  const [review, setReview] = useState(``)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     prism.highlightAll();
   })
 
   async function reviewCode(){
+    setLoading(true)
     const response = await axios.post('http://localhost:3000/ai/get-review', { code })
     setReview(response.data)
+    setLoading(false)
     console.log(response.data)
   }
 
@@ -46,7 +48,7 @@ function App() {
         className="review">Review</div>
       </div>
       <div className="right">
-        <Markdown>{review}</Markdown>
+      {loading ? <div className="loader"></div> : <Markdown>{review}</Markdown>}
       </div>
     </main>
     </>

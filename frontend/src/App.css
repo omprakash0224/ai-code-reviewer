@@ -54,12 +54,12 @@ main .left .review {
   border-radius: 0.7rem;
 }
 
-
 main .right {
   background-color: #343434;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   overflow: auto;
+  position: relative;
 }
 
 .loader {
@@ -76,10 +76,40 @@ main .right {
          calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5.6px,
          calc(0*var(--d))      calc(-1*var(--d))    0 6.7px;
   animation: spinner-a90wxe 1s infinite steps(8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.content {
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes spinner-a90wxe {
   100% {
      transform: rotate(1turn);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  main .left,
+  main .right {
+    flex-basis: 100%;
+  }
+
+  .loader {
+    --d: 12.3px;
+    width: 2.25px;
+    height: 2.25px;
   }
 }

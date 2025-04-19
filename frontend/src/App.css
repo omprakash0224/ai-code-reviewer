@@ -87,6 +87,12 @@ main .right {
   color: #b0b0b0;
 }
 
+.navbar-logo img {
+  width: 50px; /* Adjust the size of the logo */
+  height: 50px;
+  margin-bottom: 0.5rem; /* Add spacing below the logo */
+}
+
 .loader {
   --d: 24.6px;
   width: 4.5px;
@@ -158,5 +164,10 @@ main .right {
 
   .navbar-tagline {
     font-size: 0.9rem;
+  }
+
+  .navbar-logo img {
+    width: 40px;
+    height: 40px;
   }
 }

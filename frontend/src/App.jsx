@@ -27,6 +27,9 @@ function App() {
   return (
     <>
     <header className="navbar">
+    <div className="navbar-logo">
+    <img src="/logo2.png" alt="CodeSensei Logo" />
+  </div>
       <div className="navbar-brand">CodeSensei</div>
       <div className="navbar-tagline">Your AI Mentor for Cleaner Code</div>
     </header>

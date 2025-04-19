@@ -15,9 +15,9 @@ function App() {
     prism.highlightAll();
   })
 
-  async function reviewCode() {
+  async function reviewCode(){
     setLoading(true)
-    const apiUrl = 'https://codesensei-6ysm.onrender.com';
+    const apiUrl ='https://codesensei-6ysm.onrender.com';
     const response = await axios.post(`${apiUrl}/ai/get-review`, { code });
     setReview(response.data)
     setLoading(false)
@@ -26,39 +26,36 @@ function App() {
 
   return (
     <>
-      <header className="navbar">
-        <div className="navbar-brand">CodeSensei</div>
-        <div className="navbar-tagline">Your AI Mentor for Cleaner Code</div>
-      </header>
-      <main>
-        <div className="left">
-          <div className="code">
-            <div className="code-container">
-              <Editor
-                value={code}
-                onValueChange={code => setCode(code)}
-                highlight={code => prism.highlight(code, prism.languages.javascript, 'javascript')}
-                padding={10}
-                style={{
-                  fontFamily: '"Fira code", "Fira Mono", monospace',
-                  fontSize: 16,
-                  height: '100%',
-                  width: '100%',
-                  border: '1px solid #000',
-                  borderRadius: '5px'
-                }}
-              />
-            </div>
-
-          </div>
-          <div
-            onClick={reviewCode}
-            className="review">Review</div>
+    <header className="navbar">
+      <div className="navbar-brand">CodeSensei</div>
+      <div className="navbar-tagline">Your AI Mentor for Cleaner Code</div>
+    </header>
+    <main>
+      <div className="left">
+        <div className="code">
+          <Editor
+            value={code}
+            onValueChange={code => setCode(code)}
+            highlight={code => prism.highlight(code, prism.languages.javascript, 'javascript')}
+            padding={10}
+            style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: 16,
+              height: '100%',
+              width: '100%',
+              border: '1px solid #000',
+              borderRadius: '5px'
+            }}
+          />
         </div>
-        <div className="right">
-          {loading ? <div className="loader"></div> : <Markdown>{review}</Markdown>}
-        </div>
-      </main>
+        <div
+        onClick={reviewCode} 
+        className="review">Review</div>
+      </div>
+      <div className="right">
+      {loading ? <div className="loader"></div> : <Markdown>{review}</Markdown>}
+      </div>
+    </main>
     </>
   )
 }

@@ -114,6 +114,15 @@ main .right {
   z-index: 1;
 }
 
+.code-container {
+  height: 100%; /* Take full height of the parent */
+  width: 100%; /* Take full width of the parent */
+  overflow: auto; /* Add scroll behavior for lengthy code */
+  border: 1px solid #000; /* Optional: Add a border for better visibility */
+  border-radius: 5px;
+  background-color: #1e1e1e; /* Match the editor's background */
+}
+
 @keyframes spinner-a90wxe {
   100% {
      transform: rotate(1turn);
@@ -157,5 +166,10 @@ main .right {
 
   .navbar-tagline {
     font-size: 0.9rem;
+  }
+
+  .code-container {
+    height: 50vh; /* Adjust height for smaller screens */
+    overflow: auto; /* Ensure scrolling for lengthy code */
   }
 }

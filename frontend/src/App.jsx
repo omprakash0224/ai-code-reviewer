@@ -17,7 +17,8 @@ function App() {
 
   async function reviewCode(){
     setLoading(true)
-    const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+    const apiUrl = process.env.REACT_APP_API_URL || 'https://codesensei-6ysm.onrender.com';
+    const response = await axios.post(`${apiUrl}/ai/get-review`, { code });
     setReview(response.data)
     setLoading(false)
     console.log(response.data)

@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({ origin: "https://codesensei-blond.vercel.app/" }));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

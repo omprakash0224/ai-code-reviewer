@@ -25,6 +25,10 @@ function App() {
 
   return (
     <>
+    <header className="navbar">
+      <div className="navbar-brand">CodeSensei</div>
+      <div className="navbar-tagline">Your AI Mentor for Cleaner Code</div>
+    </header>
     <main>
       <div className="left">
         <div className="code">

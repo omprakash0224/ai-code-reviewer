@@ -24,11 +24,13 @@ main .right {
   height: 100%;
   flex-basis: 50%;
   border-radius: 0.7rem;
+  overflow: hidden; /* Prevent content overflow */
 }
 
 main .left {
   background-color: #000000;
   position: relative;
+  overflow: auto; /* Add scroll behavior for lengthy code */
 }
 
 .left .code,
@@ -38,7 +40,6 @@ main .left {
   width: 100%;
   margin: 0;
   border-radius: 0.7rem;
-  /* background-color: #0c0c0c; */
 }
 
 main .left .review {
@@ -58,7 +59,7 @@ main .right {
   background-color: #343434;
   padding: 1rem 2rem;
   font-size: 1.5rem;
-  overflow: auto;
+  overflow: auto; /* Add scroll behavior for lengthy content */
   position: relative;
 }
 
@@ -129,6 +130,15 @@ main .right {
   main .left,
   main .right {
     flex-basis: 100%;
+    height: 50%; /* Split the height equally for both sections */
+  }
+
+  main .left {
+    overflow: auto; /* Allow scrolling for lengthy code */
+  }
+
+  main .right {
+    overflow: auto; /* Allow scrolling for lengthy content */
   }
 
   .loader {
@@ -136,6 +146,7 @@ main .right {
     width: 2.25px;
     height: 2.25px;
   }
+
   .navbar {
     padding: 0.8rem;
   }
